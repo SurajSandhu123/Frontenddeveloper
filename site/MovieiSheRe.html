@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MovieiSheRe</title>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+ </head>
+<body>
+	
+<div id="root">
+	<h1>{{ gret('Bro') }}</h1><br/>
+		<a v-bind:href="website">Karde click Hun</a><br/>
+<h1>{{ name }}</h1><br/>
+<h3 v-html="webtag"></h3><input  v-model="greet"><br/>
+<h1>{{ greet }}</h1><br/>
+<button v-on:click="age++"></button><br/>
+<button v-on:click="age--">For Substrac</button>
+<p> My age is {{ age }}</p>
+<button></button>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

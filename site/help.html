@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movies</title>
+	<style>
+	.slideshow-container {
+  
+  position: relative;
+  margin: auto;
+  height: 500px;
+  margin-top: 10px;
+ 
+}
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+
+}
+.fade img
+{
+	 width: 101%;
+  height:500px;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.middle{
+	height: 85px;
+	text-align: right;
+	margin-right: 6px;
+
+}
+
+.middle a{
+	background-color: #fff;
+}
+
+.btn1{
+	display: inline-block;
+	box-shadow: 0px 5px 15px -5px #00000070;
+	overflow: hidden;
+	padding: 5px;
+}
+
+.btn1 i{
+	margin: 0 10px;
+	font-size: 20px;
+	transition: 0.2s linear;
+}
+
+.btn1:hover i{
+	transform: scale(1.3);
+}
+
+.media p{
+}
+
+ul{
+	list-style-type: none;
+	z-index: 1;
+	margin: auto;
+}
+
+ul li{
+	width: 160px;
+	float: right;
+	margin: 6px;
+	background-color: #fff;
+	opacity: 0.9;
+	border-radius: 5px;
+	text-align: center;
+}
+
+ul li{
+	font-size: 20px;
+	text-decoration: none;
+	color: black;
+	padding: 8px;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+#drop{
+	
+	display: none;
+	overflow: hidden;
+}
+
+
+
+#drop ul li{
+	float: none;
+	text-decoration: none;
+	text-align: left;
+	
+}
+
+ul li{
+	border-bottom: 2px solid  #85c1e9 ;
+}
+
+ul li:hover{
+	cursor: pointer;
+}
+
+
+
+
+/*ul li:hover #drop ul{
+	display: block;
+}*/
+
+/*.navigation{
+	display:flex;
+  	flex-wrap: wrap;
+  	align-content: end;
+	font-size: 20px;
+	
+}
+/*.navigation a{
+	margin: 6px;
+	text-decoration: none;
+}
+.categories .navigation a:hover{
+	box-shadow: 0px 0px 2px black;
+	text-decoration: underline;
+}
+.parent-op{
+	position: relative;
+}
+.child-op a{
+	color: black;
+	padding: 5px 5px;
+	float: right;
+	text-decoration: none;
+	display: block;
+	margin: 0;
+	text-align: bottom;
+}*/
+
+#logo{
+	font-size: 16px;
+}
+
+.logo1 span{
+	font-size: 48px;
+}
+
+.search-main{
+	width: 100%;
+	height: 70px;
+	display: inline-block;
+}
+
+.search-main .head2{
+	width: 30%;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.search-box{
+	float: right;
+	display: flex;
+	background: #2f3640;
+	border-radius: 40px;
+	padding: 10px;
+	margin: 10px;
+}
+
+.search-txt{
+	display: none;
+	outline: none;
+	border: none;
+	background: none;
+	padding: 5px;
+	color: white;
+	font-size: 16px;
+	width: 300px;
+}
+
+.search-btn{
+	color: #e84118;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	border-radius: 50%;
+	transform: translate(30%,30%);
+}
+
+.search-box a.search-btn{
+}
+
+.search-box:hover .search-txt{
+	display: block;
+	width: 300px;
+
+}
+
+.lst{
+	height: 185px;
+	width: 300px;
+	position: absolute;
+	right: 3%;
+	top: 58%;
+	z-index: 1;
+	overflow: auto;
+	text-align: center;
+	display: none;
+}
+
+
+.lst ul li{
+	width: 100%;
+	background: black;
+	border: none;
+	outline: none;
+	color: #fff;
+}
+.main-container{
+	max-width: 90%;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.card{
+	width: 250px;
+	height: 320px;
+	margin: 0 auto 50px;
+  	background-color:  #fff;
+  	/*border-radius: 5px;*/
+  	/*box-shadow: 0px 8px 10px #f5cba7, -8px 0px 10px #fff, 6px 0px 10px #f5cba7, 0px -6px 10px #f5cba7;*/ 
+	border: none;
+	outline: none;
+	display: inline-block;
+	overflow: hidden;
+  }
+
+  .card:hover{
+  	box-shadow: 0px 8px 10px #f5cba7, -8px 0px 10px #fff, 6px 0px 10px #f5cba7, 0px -6px 10px #f5cba7;
+  }
+
+.line, .line1{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-top: 50px;
+	/*border: 2px solid blue;*/
+}
+
+/*.main-container::before{
+	content: "";
+	display: block;
+	position: absolute;
+	top: 61%;
+	transform: translateX(11%);
+	border-bottom: 2px solid  #909497;
+	width: 90%;
+}*/
+
+.image1{
+	height: 240px;
+	border: none;
+	outline: none;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+ .image1 img{
+	width: 100%;
+	height: 100%;
+	/*border-radius: 5px;*/
+	border: none;
+	outline: none;
+	opacity: 0;
+	transition: 0.5s all;
+}
+
+.image1:hover img{
+	opacity: 1;
+}
+
+.title{
+	height: 40px;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+h3.cat{
+	color: #f1948a;
+}
+
+.banner {
+	width: 100%; 
+}
+
+.banner img{
+	width: 100%;
+	height: 200px;
+}
+
+.slider { 
+	overflow: hidden;
+	margin-top: 10px;
+}
+
+.slider figure img{ 
+	
+	height: 300px;
+	float: left;
+}
+
+.slider figure{
+	position: relative; 
+	width: 200%;
+	text-align: right;
+	animation: 5s slidy infinite; 
+}
+
+
+
+@keyframes slidy {
+0% {left: 0%; }
+20% {left: 0%; }
+40% {left: -100%; }
+50% {left: -100%; }
+70% {left: -100%; }
+75% {left: -100%; }
+95% {left: 0%; }
+100% {left: 0%; }
+}
+
+.title{
+	text-align: center;
+	line-height: 50px;
+}
+
+.butt1{
+	font-size: 14px;
+	font-family: ;
+	color: black;
+	border: none;
+	outline: none;
+  	border-radius: 5px;
+	height: 30px;
+	width: 80%;
+	background-color: white;
+	margin-bottom: 4px;
+}
+
+.butt1:hover{
+	background-color: black;
+	color: white;
+}
+
+footer{
+	background-color:  #1c2833;
+}
+
+.div18{
+	padding: 5px 40px 10px 40px;
+	height: auto;
+	width: auto;
+	margin: auto;
+	display: flex;
+	flex-wrap: nowrap;
+	font-size: 14px;
+	font-family: 'Staatliches', cursive;
+	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Roboto Slab', serif;
+	font-family: 'Roboto', sans-serif;
+    line-height: 30px;
+
+}
+
+.div19{
+	text-align: center;
+	height: auto;
+	width: 15%;
+	color: white;
+	margin-top: 40px;
+}
+
+.div20, .div21{
+	padding-right: 60px;
+	height: auto;
+	width: 27.5%;
+	text-align: center;
+	color: white;	
+	margin-top: 40px;
+}
+
+.div20{
+	border-right: 1px solid  #717d7e ;
+
+}
+
+.div21{
+
+}
+
+.div19 h3, .div20 h3, .div21 h3{
+	color:  #7f8c8d ;
+}
+
+.copy-right{
+	line-height: 50px;
+}
+
+</style>
+</head>
+<body>
+	
+	
+<header  id="head">
+	<nav style="word-spacing: 40px; color: 	rgb(211,211,211) ; background-color: black;"><img src="clip.png" width="40px;" style="border-radius: 50px; margin-right: 60px;">Movies <a href="#pop" style="text-decoration: none;color:rgb(211,211,211); margin-left: 30px;">Popular</a><a href="#pop1" style="text-decoration: none; color:rgb(211,211,211); margin-left:30px;"> Top-Rated</a> LOGIN</nav>
+
+	<div class="slideshow-container" style="margin-left: -23px;  width: 101%;" >
+   <div class="mySlides fade">
+ 
+  <img src="h1.jpg" >
+  
+</div>
+
+<div class="mySlides fade" >
+  <img src="h2.png" >
+  
+</div>
+
+
+
+<div class="mySlides fade" >
+ 
+  <img src="h4.jpg" >
+  
+</div>
+<div class="mySlides fade">
+ 
+  <img src="h5.jpg" >
+  
+</div>
+<div class="mySlides fade" style="width: 138%; height:500px;">
+ 
+  <img src="h6.jpg" >
+  
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span>
+   <span class="dot"></span>
+    <span class="dot"></span> 
+</div>
+</div>
+</header>
+<script type="text/javascript">
+		var slideIndex = 0;
+showSlides();
+		function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+ /* for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }*/
+  slides[slideIndex-1].style.display = "block";  
+  //dots[slideIndex-1].className += " active";
+
+  setTimeout(showSlides, 2000); 
+
+  // Change image every 2 seconds
+ 
+}
+</script>
+<section>
+	<div class="head2">
+			<div class="container-fluid"><b><h3 class="cat">Movies</h3></b></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function show()
+		{
+          // document.getElementById('show').
+		}
+	</script>
+	<div class="main-container">
+		<div class="line1">
+			<div class="card">
+				<div class="image1" style="background-image: url(pop16.jpg);">
+					<img src="pop17.png">
+				</div>
+				<div class="title">
+					<h4 style="text-align: center; margin-top: 0px;">Jojo Rabbit (2019) </h4>
+				</div>
+			</div>
+			<div class="card">
+				<div class="image1" style="background-image: url(pop18.png);">
+					<img src="pop19.jpg">
+				</div>
+				<div class="title">
+					<h4 style="text-align: center; margin-top: 0px;">Precious Cargo (2016)</h4>
+				</div>
+				<center><button class="btn primary-btn butt1"></button></center>
+			</div>
+				
+			<div class="card">
+				<div class="image1" style="background-image: url(pop20.jpg);">
+					<img src="pop21.jpg">
+				</div>
+				<div class="title">
+					<h4 style="text-align: center; margin-top: 0px;">The King (2019)</h4>
+				</div>
+				<center><button class="btn primary-btn butt1"></button></center>
+			</div>
+			<div class="card">
+				<div class="image1" style="background-image: url(pop22.jpg);">
+					<img src="pop23.jpg">
+				</div>
+				<div class="title">
+					<h4 style="text-align: center; margin-top: 0px;">American Made (2017)</h4>
+				</div>
+				<center><button class="btn primary-btn butt1" onclick="disable()"></button></center>
+			</div>
+			<!--<div class="card">
+				<div class="image1">
+					<img src="images/camera1.jpg">
+				</div>
+				<div class="title">
+					<h3><b>Canon best camera</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1">Add to cart</button></center>
+			</div>-->
+		</div>
+	</div>
+		<div class="banner">
+			<img src="fast.jpg">
+		</div>
+	<div class="head2">
+		<div class="container-fluid" id="pop"><b><h3 class="cat">Popular Movies</h3></b></div>
+	</div>
+	<div class="main-container">
+		<div class="line">
+			<div class="card">
+				<div class="image1" style="background-image: url(pop0.jpg);">
+					<img src="pop1.jpg">
+				</div>
+				<div class="title">
+					<h3 style="text-align: center; margin-top: 0px;"><b>Wonder Woman (2017)</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1" ></button></center>
+			</div>
+			<div class="card">
+				<div class="image1" style="background-image: url(pop5.jpg);">
+					<img src="pop2.jpg">
+				</div>
+				<div class="title">
+					<h3 style="text-align: center; margin-top: 0px;"><b>Little Women (2019)</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1"></button></center>
+			</div>
+				
+			<div class="card">
+				<div class="image1" style="background-image: url(pop6.jpg);">
+					<img src="pop3.jpg">
+				</div>
+				<div class="title">
+					<h3 style="text-align: center; margin-top: 0px;"><b>Black Death (2010)</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1"></button></center>
+			</div>
+			<div class="card">
+				<div class="image1" style="background-image: url(pop7.jpg);">
+					<img src="pop4.jpg">
+				</div>
+				<div class="title">
+					<h3 style="text-align: center; margin-top: 0px;"><b>The Day After Tomorrow</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1"></button></center>
+			</div>
+			<!--<div class="card">
+				<div class="image1">
+					<img src="images/camera1.jpg">
+				</div>
+				<div class="title">
+					<h3><b>Canon best camera</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1">Add to cart</button></center>
+			</div>-->
+		</div>
+	</div>
+		<!--<div class="slider">
+			<figure>
+				<img src="b3.jpg">
+				<img src="b2.jpg">
+			</figure>
+		</div>-->
+
+
+		<!--<div class="line">
+			<div class="card">
+				<div class="image1">
+					<img src="images/camera1.jpg">
+				</div>
+				<div class="title">
+					<h3><b>Canon best camera</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1">Add to cart</button></center>
+			</div>
+			<div class="card">
+				<div class="image1">
+					<img src="images/camera1.jpg">
+				</div>
+				<div class="title">
+					<h3><b>Canon best camera</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1">Add to cart</button></center>
+			</div>
+				
+			<div class="card">
+				<div class="image1">
+					<img src="images/camera1.jpg">
+				</div>
+				<div class="title">
+					<h3><b>Canon best camera</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1">Add to cart</button></center>
+			</div>
+			<div class="card">
+				<div class="image1">
+					<img src="images/camera1.jpg">
+				</div>
+				<div class="title">
+					<h3><b>Canon best camera</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1">Add to cart</button></center>
+			</div>
+			<div class="card">
+				<div class="image1">
+					<img src="images/camera1.jpg">
+				</div>
+				<div class="title">
+					<h3><b>Canon best camera</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1">Add to cart</button></center>
+			</div>
+		</div>
+	</div>-->
+	<div class="head2">
+		<div class="container-fluid" id="pop1"><b><h3 class="cat">Top Rated Movies</h3></b></div>
+	</div>
+	
+	<div class="main-container">
+		<div class="line">
+			<div class="card">
+				<div class="image1" style="background-image: url(pop8.jpg);">
+					<img src="pop9.png">
+				</div>
+				<div class="title">
+					<h3 style="text-align: center; margin-top: 0px;"><b>Dolittle (2020)</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1"></button></center>
+			</div>
+			<div class="card">
+				<div class="image1" style="background-image: url(pop10.jpg);">
+					<img src="pop11.png">
+				</div>
+				<div class="title">
+					<h3  style="text-align: center; margin-top: 0px;"><b>John wick 3</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1"></button></center>
+			</div>
+				
+			<div class="card">
+				<div class="image1" style="background-image: url(pop12.jpg);">
+					<img src="pop13.jpg">
+				</div>
+				<div class="title">
+					<h3 style="text-align: center; margin-top: 0px;"><b>Jumanji The Next Level</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1"></button></center>
+			</div>
+			<div class="card">
+				<div class="image1" style="background-image: url(pop14.jpg);">
+					<img src="pop15.png">
+				</div>
+				<div class="title">
+					<h3 style="text-align: center; margin-top: 0px;"><b>Ford v Ferrari (2019)</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1"></button></center>
+			</div>
+			<!--<div class="card">
+				<div class="image1">
+					<img src="images/camera1.jpg">
+				</div>
+				<div class="title">
+					<h3><b>Canon best camera</b></h3>
+				</div>
+				<center><button class="btn primary-btn butt1">Add to cart</button></center>
+			</div>-->
+		</div>
+	</div>
+
+	<footer>
+		<div class="div18">
+		    <div class="div19">
+		        <h3>ABOUT</h3>
+		        <p>Contact Us<br>
+		        About Us<br>
+		        B Bazaar Stories<br>
+		        Press</p>
+		    </div>
+		    <div class="div19">
+		        <h3>HELP</h3>
+		        <p>Payments<br>
+		        Shipping<br>
+		        Returns<br>
+		        FAQ<br>
+		        Report Issue</p>
+		    </div>
+
+		    <div class="div19">
+		        <h3>Return Policy</h3>
+		        <p>Terms Of Use<br>
+		        Security<br>
+		        Privacy<br>
+		        Sitemap<br>
+		        EPR Compliance</p>
+		    </div>
+
+			<div class="div20">
+		        <h3>Mail Us:</h3>
+
+				<p>B Bazaar Pvt Ltd<br>
+
+				LPU Block 51<br>
+
+				Law Gate<br>
+
+				K Appartments<br>
+
+				Jalandhar 114441<br>
+
+				Punnjab India</p>
+		    </div>
+
+		    <div class="div21">
+			    <h3>Reg Address:</h3>
+
+				<p>B Bazzar Pvt Ltd<br>
+
+				Luxemberg<br>
+
+				Clove Tech Village<br>
+
+				Outer Ring Road<br>
+
+				Bengaluru 560103<br>
+
+				Karnataka India<br>
+
+				Telephone: 8434090048</p>
+
+		    </div>
+
+		</div>
+		<div class="copy-right text-white border-top">
+			<center><span>Internet Based Ads</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-muted">&copy; 2018-2019, Billion Bazaar, Inc. or its affiliates</span></center>
+		</div>
+	</footer>
+</section>
+</body>
+</html>
